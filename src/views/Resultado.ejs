@@ -1,0 +1,36 @@
+
+<%include partials/_headerLogin %>
+<br>
+<br>
+
+<center>
+<h2>Resultados de la busqueda:<h2>
+<br>  
+<div class="container">
+  <table class="table table-bordered table-hover">
+      <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre del juego</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% if (data){ %>
+          <% for (var i = 0; i < data.length;i++) { %>
+            <tr>
+              <td><%= (i + 1) %></td>
+              <td><%= data[i].nombre %></td>
+              <td><%= data2[i].categoria %></td>
+              <td>$ <%= data[i].precio %></td>
+              <td>
+              </td>
+            </tr>
+          <% } %>
+        <% } %>
+      </tbody>
+  </table>
+</center>
+</div>
+<%include partials/_footer %>

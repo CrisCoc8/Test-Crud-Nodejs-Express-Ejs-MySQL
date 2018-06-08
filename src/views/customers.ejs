@@ -1,0 +1,54 @@
+<% include partials/_header %>
+
+<br>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-5">
+      <h3> Iniciar Sesion <h3>
+        <div class="MarcoLogin">
+          <form action="/Verification" method="post">
+                <!--Usuario -->
+                <div class="textbox">
+                  <input type="text" placeholder="Usuario" value="" required name="usuarioo">
+                </div>
+                <!-- Contraseña -->
+                <div class="textbox">
+                  <input type="password" placeholder="Contraseña" value="" required name="contrasenaa">
+                </div>
+                <!-- Boton De Ingresar -->
+                <button type="submit" class="btn btn-success">
+                  Ingresar
+                </button>
+          </form>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+    </div>
+
+    <div class="col-md-3">
+      <h3> Registrate <h3>
+        <div class="card">
+
+          <form action="/addUser" method="post">
+                <!--Usuario -->
+                <div class="textbox">
+                  <input type="text" placeholder="Usuario" required value="" name="usuario">
+                </div>
+                <!-- Contraseña -->
+                <div class="textbox">
+                  <input type="password" placeholder="Contraseña" required value="" name="contrasena">
+                </div>
+                <!-- Boton De Ingresar -->
+                <button type="submit" class="btn btn-success">
+                  Registar
+                </button>
+          </form>
+        </div>
+
+        </div>
+
+    </div>
+
+
+<%include partials/_footer %>

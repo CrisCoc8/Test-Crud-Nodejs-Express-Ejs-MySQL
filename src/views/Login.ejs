@@ -1,0 +1,85 @@
+<% include partials/_headerMain %>
+
+<center>
+<h1><i class="material-icons">gamepad</i>  Game Shop  <i class="material-icons">gamepad</i></h1>
+</center>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6">
+
+      <table class="table table-bordered table-hover">
+          <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre del juego</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th><center>Acciones</center></th>
+              </tr>
+          </thead>
+          <tbody>
+            <% if (data){ %>
+              <% for (var i = 0; i < data.length;i++) { %>
+                <tr>
+                  <td><%= (i + 1) %></td>
+                  <td><%= data[i].nombre %></td>
+                  <td><%= data2[i].categoria %></td>
+                  <td>$ <%= data[i].precio %></td>
+                  <td>
+                      <center>
+                    <a href="/delete/<%= data[i].sid %>" class="btn btn-danger">Eliminar</a>
+                    <a href="/update/<%= data[i].sid %>" class="btn btn-warning">Editar</a>
+                      </center>
+                  </td>
+                </tr>
+              <% } %>
+            <% } %>
+          </tbody>
+      </table>
+
+    </div>
+
+    <div class="col-md-1">
+    </div>
+
+    <div class="col-md-5">
+      <h3> Registra un Juego <h3>
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="post">
+            <div class="form-group">
+              <input type="text" name="nombre" placeholder="Nombre del Juego" required class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="categoria" placeholder="Categoria" required class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="number" min="0" name="precio" placeholder="Precio" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">
+              Guardar Juego
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <h3>Buscar por nombre</h3>
+  <div class="card">
+    <form action="/buscar" method="post">
+          <div class="textbox">
+            <input type="text" placeholder="Nombre del juego" required value="" name="nombre">
+          </div>
+          <button type="submit" class="btn btn-success">
+            Buscar
+          </button>
+    </form>
+  </div>
+</div>
+<%include partials/_footer %>

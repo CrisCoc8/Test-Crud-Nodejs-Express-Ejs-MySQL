@@ -1,0 +1,29 @@
+
+<%include partials/_headerLogin %>
+
+<div class="container mt-5">
+  <h3>Actualiza la informacion del juego<h3>
+    <br>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+          <form action="/update/<%= data.sid%>" method="post">
+            <div class="form-group">
+              <input type="text" name="nombre" value="<%= data.nombre%>" required class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="categoria" value="<%= data2.categoria%>" required class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="number" name="precio" value="<%= data.precio%>" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">
+              Actualizar Juego
+            </button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%include partials/_footer %>
